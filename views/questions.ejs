@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/v-<%= version %>/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/v-<%= version %>/css/style.css">
+        <script>
+            var asyncFunctions = (function() {
+                try { new Function('async () => {}')(); } catch (err) { return false; }
+                return true;
+            })();
+            if (!asyncFunctions) { window.location.href = '/old'; }
+        </script>
+        <link rel="icon" type="image/png" href="/img/icon.png">
+    </head>
+    <body>
+        <div id="root"></div>
+        <% if (production) { %>
+            <script src="/v-<%= version %>/js/react/react.min.js"></script>
+            <script src="/v-<%= version %>/js/react/react-dom.min.js"></script>
+        <% } else { %>
+            <script src="/v-<%= version %>/js/react/react.js"></script>
+            <script src="/v-<%= version %>/js/react/react-dom.js"></script>
+        <% } %>
+        <script src="/v-<%= version %>/js/app.bundle.js"></script>
+    </body>
+</html>

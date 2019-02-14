@@ -1,0 +1,275 @@
+body {
+    font-family: "DejaVu Sans", "Tahoma", sans-serif;
+    padding: 50px;
+    line-height: 1.5;
+    font-size: 16px;
+    margin: 0;
+    padding: 50px 20px;
+}
+
+p {
+    margin: 10px 0;
+    padding: 0;
+    max-width: 600px;
+}
+
+p:first-child {    
+    margin-top: 0;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+a {
+    text-decoration: underline;
+    color: #006666;
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.page-header {
+    color: #006666;
+    font-weight: bold;
+    font-size: 28px;
+    font-family: "Arial", sans-serif;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+.page-body {
+    margin: 10px 0;
+}
+
+/* Assumes that items are block elements. */
+/* Uses flexbox to lay out elements. */
+
+.page-footer {
+    margin: 10px -10px 0 -10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    padding: 5px;
+}
+
+/* Assumed to be contained inside page-footer. */
+
+.action-button {
+    display: block;
+    min-width: 150px;
+    line-height: 1;
+    font-size: 22px;
+    text-align: center;
+    text-decoration: none;
+    padding: 9px;
+    border-radius: 10px;
+    font-weight: normal;
+    font-family: "Arial", sans-serif;
+    cursor: pointer;
+    background-color: #65a830;
+    color: #ffffff;
+    margin: 5px;
+}
+
+.action-button:hover {
+    background-color: #498917;
+}
+
+.help-block {
+    max-width: 600px;
+    font-size: 16px;
+    font-family: "DejaVu Sans", "Tahoma", sans-serif;
+    margin-top: 20px;
+}
+
+.appear {
+    animation-name: appear;
+    animation-duration: 0.75s;
+    animation-iteration-count: 1;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0.7;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.choice-block {
+    display: block;
+    background-color: #f8f8f8;
+    padding: 10px 20px;
+    line-height: 1;
+    text-decoration: none;
+    color: #333333;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.choice-block:hover {
+    background-color: #cccccc;
+}
+
+.choice-block + .choice-block {
+    margin-top: 5px;
+}
+
+.why-block {
+    color: #666666;
+    margin-top: 20px;
+    max-width: 600px;
+}
+
+.review-wrap {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    overflow-y: scroll;
+    padding: 20px;
+}
+
+.review {
+    max-width: 1024px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    position: relative;
+}
+
+.review-answer {
+    background-color: #f8f8f8;
+    padding: 10px 40px 10px 20px;
+    line-height: 1;
+    color: #333333;
+    font-size: 18px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.review-answer-topic {
+    font-weight: bold;
+}
+
+.review-answer + .review-answer {
+    margin-top: 5px;
+}
+
+.review-answer-value {
+    font-weight: bold;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.review-answer-yes {
+    color: #006600;
+}
+
+.review-answer-no {
+    color: #660000;
+}
+
+.review-answer-skip {
+    color: #660066;
+}
+
+.review-answer-dnk {
+    color: #666600;
+}
+
+.review-reset {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #f8f8f8;
+    color: #333333;
+    text-decoration: none;
+}
+
+.review-reset:hover {
+    color: #cccccc;
+}
+
+.doc-title {
+    display: block;
+    font-size: 22px;
+    height: 38px;
+    border-radius: 10px;
+    outline: 0;
+    padding: 0 4px;
+    border: 1px solid #999;
+    margin: 5px;
+}
+
+.review-links {
+    display: block;
+    line-height: 1;
+    font-size: 16px;
+    padding: 12px 0;
+    margin: 5px;
+}
+
+.close-button {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background-color: #f8f8f8;
+    color: #333333;    
+}
+
+.close-button:hover {
+    background-color: #cccccc;
+}
+
+.front-image {
+    position: relative;
+}
+
+.planning {
+    font-size: 24px;
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    top: 80px;
+    left: 320px;
+    width: 280px;
+    text-align: center;
+    color: #666;
+}
+
+.copyright {
+    color: #999;
+    font-size: 14px;
+    max-width: 600px;
+}
+
+@media screen and (max-width: 1000px) {
+    .choice-block,
+    .review-answer {
+        font-size: 16px;
+    }
+    .review {
+        padding-bottom: 81px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .front-image {
+        display: none;
+    }
+}

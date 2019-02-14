@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/v-<%= version %>/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/v-<%= version %>/css/style.css">
+        <link rel="icon" type="image/png" href="/img/icon.png">
+    </head>
+    <body>
+        <div class="container">
+            <div class="page">
+                <div class="page-header"><%= title %></div>
+                <div class="page-body">
+                    <% for (const answer of answers) { %>
+                        <div class="review-answer">
+                            <% if (answer.type === 'topic') { %>
+                                <span class="review-answer-topic"><%= answer.text %></span>
+                            <% } else { %>
+                                <span class="review-answer-text"><%= answer.text %></span>
+                                <span class="review-answer-value review-answer-<%= answer.answer %>">
+                                    <% if (answer.icon) { %><i class="fa fa-<%= answer.icon %>" aria-hidden="true"></i><% } %> <%= answer.label %>
+                                </span>
+                            <% } %>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="help-block">
+                    Link to this page: <a href="/html/<%= id %>" target="_blank"><%= hostPrefix %>/html/<%= id %></a><br/>
+                    Link to PDF file: <a href="/pdf/<%= id %>" target="_blank"><%= hostPrefix %>/pdf/<%= id %></a>
+                </div>
+                <div class="help-block">
+                    This page is produced by the application at <a href="<%= hostPrefix %>/" target="_blank"><%= hostPrefix %>/</a>.
+                    The application helps to find out the most basic requirements of a software development project.
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
